@@ -7,15 +7,6 @@
  * Commons Zero (CC0 1.0) License for more details.
  */
 
-#ifndef _WIN32
-	#ifndef _BSD_SOURCE
-		#define _BSD_SOURCE // for usleep from unistd.h
-	#endif
-	#ifndef _GNU_SOURCE
-		#define _GNU_SOURCE
-	#endif
-#endif
-
 #include <errno.h>
 #include <stddef.h>
 #include <stdio.h>
@@ -23,21 +14,15 @@
 #include <string.h>
 #include <time.h>
 
-#ifdef _WIN32
-	#include <winsock2.h>
-	#include <wincrypt.h>
-	#include <process.h>
-#else
-	#include <fcntl.h>
-	#include <unistd.h>
-	#include <sys/types.h>
-	#include <sys/socket.h> // connect
-	#include <sys/select.h>
-	#include <sys/stat.h>
-	#include <netinet/tcp.h> // TCP_NO_DELAY
-	#include <netdb.h> // gethostbyname
-	#include <netinet/in.h> // struct sockaddr_in
-#endif
+#include <fcntl.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/socket.h> // connect
+#include <sys/select.h>
+#include <sys/stat.h>
+#include <netinet/tcp.h> // TCP_NO_DELAY
+#include <netdb.h> // gethostbyname
+#include <netinet/in.h> // struct sockaddr_in
 
 #ifdef _MSC_VER
 	// replace getpid with GetCurrentProcessId

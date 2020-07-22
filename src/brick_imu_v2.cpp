@@ -19,8 +19,6 @@
 extern "C" {
 #endif
 
-
-
 typedef void (*AccelerationCallbackFunction)(int16_t, int16_t, int16_t, void *);
 
 typedef void (*MagneticFieldCallbackFunction)(int16_t, int16_t, int16_t, void *);

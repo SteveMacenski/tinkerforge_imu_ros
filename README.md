@@ -1,7 +1,7 @@
 # tinkerforge_imu_ros
 ROS drivers for Tinkerforge V2 IMU
 
-Basic ROS driver for the [Tinkerforge IMU V2 Brick](https://www.tinkerforge.com/en/doc/Hardware/Bricks/IMU_V2_Brick.html).
+Basic ROS driver for the [Tinkerforge IMU V2 Brick](https://www.tinkerforge.com/en/doc/Hardware/Bricks/IMU_V2_Brick.html). This should work with all ROS1 distributions Indigo through Noetic.
 
 This ROS driver contains the following:
 - Install script to automate install and launching of the tinkerforge debian packaged daemon

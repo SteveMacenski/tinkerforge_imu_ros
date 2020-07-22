@@ -27,7 +27,7 @@ boost::array<const double, 9> zeros_ = { 0, 0, 0,
                                          0, 0, 0,
                                          0, 0, 0 };
 
-void cb_quaternion(int16_t w, int16_t x, int16_t y, int16_t z, void *user_data)
+void cb_quaternion(int16_t w, int16_t x, int16_t y, int16_t z, void * user_data)
 {
   (void)user_data;
 
@@ -49,7 +49,7 @@ void cb_quaternion(int16_t w, int16_t x, int16_t y, int16_t z, void *user_data)
   imuPub_.publish(imuMsg);
 }
 
-int main(int argc, char** argv)
+int main(int argc, char ** argv)
 {
   ros::init(argc, argv, "brick_imu_v2");
 
@@ -60,7 +60,7 @@ int main(int argc, char** argv)
   nh.param("period_ms", period, 10);
   nh.param("uid", uid, std::string("6Det55"));
 
-  imuPub_ = nh.advertise<sensor_msgs::Imu>("/imu", 10);
+  imuPub_ = nh.advertise<sensor_msgs::Imu>("imu", 10);
 
   IMUV2 imu;
   IPConnection ipcon;

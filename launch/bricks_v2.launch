@@ -1,0 +1,11 @@
+<launch>
+  <arg name="uid"/>
+
+  <node pkg="tinkerforge_imu_ros" name="tinkerforge_imu_ros" type="tinkerforge_imu_ros" output="screen" respawn="true">
+    <param name="frame_id" value="imu_link" />
+    <param name="period_ms" value="10" />
+    <param name="uid" value="$(arg uid)" />
+
+  </node>
+
+</launch>

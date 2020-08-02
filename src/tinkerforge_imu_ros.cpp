@@ -109,7 +109,7 @@ int main(int argc, char ** argv)
     imu_v2_leds_off(&imu);
   }
   imu_v2_register_callback(&imu, IMU_V2_CALLBACK_ALL_DATA, (void *)cb_all_data, NULL);
-  imu_v2_set_quaternion_period(&imu, period);
+  imu_v2_set_all_data_period(&imu, period);
 
   ros::spin();
 
